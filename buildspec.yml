@@ -1,20 +1,17 @@
 version: 0.2
 
 phases:
-    install:
-        runtime-versions:
-         java: corretto11
-    pre_build:
-        commands:
-            - echo Nothing to do in the pre_build phase...
-    build:
-        commands:
-            - echo Build started on 'date'
-            - mvn install
-    post_build:
-        commands:
-            - echo Build completed on 'date'
+  install:
+    commands:
+      - echo "No dependencies needed for a static HTML website."
+
+build:
+  commands:
+    - echo "Building the project..."
+
 artifacts:
-    files:
-        - target/messageUtil-1.0.jar
+  files:
+    - '**/*'
+  discard-paths: no # Store folder and files in the root of the artifact output
+  base-directory: .  # Specify the directory of files to upload (use '.' for root directory)
         
